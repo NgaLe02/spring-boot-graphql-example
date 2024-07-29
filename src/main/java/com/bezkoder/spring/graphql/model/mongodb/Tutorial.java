@@ -1,8 +1,15 @@
-package com.bezkoder.spring.graphql.model;
+package com.bezkoder.spring.graphql.model.mongodb;
 
+<<<<<<< Updated upstream:src/main/java/com/bezkoder/spring/graphql/model/Tutorial.java
 import jakarta.persistence.*;
 
 @Entity
+=======
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "tutorials")
+>>>>>>> Stashed changes:src/main/java/com/bezkoder/spring/graphql/model/mongodb/Tutorial.java
 public class Tutorial {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

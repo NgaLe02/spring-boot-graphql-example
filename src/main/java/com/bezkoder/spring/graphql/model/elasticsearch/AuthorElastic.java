@@ -1,32 +1,28 @@
-package com.bezkoder.spring.graphql.model;
+package com.bezkoder.spring.graphql.model.elasticsearch;
 
-import jakarta.persistence.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.elasticsearch.annotations.Document;
 
-@Entity
-public class Author {
+@Document(indexName = "authors")
+public class AuthorElastic {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
-
-	@Column(name = "name", nullable = false)
+	private String id;
 	private String name;
-
-	@Column(name = "age")
 	private Integer age;
 
-	public Author() {
+	public AuthorElastic() {
 	}
 
-	public Author(Long id) {
+	public AuthorElastic(String id) {
 		this.id = id;
 	}
 
-	public Author(String name, Integer age) {
+	public AuthorElastic(String name, Integer age) {
 		this.name = name;
 		this.age = age;
 	}
 
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
@@ -50,5 +46,4 @@ public class Author {
 	public String toString() {
 		return "User [id=" + id + ", name=" + name + ", age=" + age + "]";
 	}
-
 }

@@ -3,10 +3,10 @@ package com.bezkoder.spring.graphql.resolver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.bezkoder.spring.graphql.model.Author;
-import com.bezkoder.spring.graphql.model.Tutorial;
-import com.bezkoder.spring.graphql.repository.AuthorRepository;
-import com.bezkoder.spring.graphql.repository.TutorialRepository;
+import com.bezkoder.spring.graphql.model.mongodb.Author;
+import com.bezkoder.spring.graphql.model.mongodb.Tutorial;
+import com.bezkoder.spring.graphql.repository.mongodb.AuthorRepository;
+import com.bezkoder.spring.graphql.repository.mongodb.TutorialRepository;
 
 import graphql.kickstart.tools.GraphQLQueryResolver;
 import graphql.scalars.ExtendedScalars;
