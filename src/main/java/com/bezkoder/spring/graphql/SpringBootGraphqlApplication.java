@@ -12,7 +12,7 @@ public class SpringBootGraphqlApplication {
 	}
 
 	@Bean
-  public graphql.schema.GraphQLScalarType extendedScalarLong() {
-    return graphql.scalars.ExtendedScalars.GraphQLLong;
-  }
+	public graphql.schema.GraphQLScalarType extendedScalarLong() {
+		return graphql.scalars.ExtendedScalars.GraphQLLong;
+	}
 }
