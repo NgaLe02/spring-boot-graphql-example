@@ -1,33 +1,28 @@
 package com.bezkoder.spring.graphql.model;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import jakarta.persistence.*;
 
-@Entity
+@Document(collection = "tutorials")
 public class Tutorial {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
-
-	@Column(name = "title", nullable = false)
+	private String id;
 	private String title;
-
-	@Column(name = "description")
 	private String description;
-
-	@ManyToOne
-	@JoinColumn(name = "author_id", nullable = false, updatable = false)
-	private Author author;
+	private String author_id;
 
 	public Tutorial() {
 	}
 
-	public Tutorial(String title, String description, Author author) {
+	public Tutorial(String title, String description, String author_id) {
 		this.title = title;
 		this.description = description;
-		this.author = author;
+		this.author_id = author_id;
 	}
 
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
@@ -47,17 +42,17 @@ public class Tutorial {
 		this.description = description;
 	}
 
-	public Author getAuthor() {
-		return author;
+	public String getAuthorId() {
+		return author_id;
 	}
 
-	public void setAuthor(Author author) {
-		this.author = author;
+	public void setAuthorId(String author_id) {
+		this.author_id = author_id;
 	}
 
 	@Override
 	public String toString() {
-		return "Tutorial [id=" + id + ", title=" + title + ", description=" + description + ", author=" + author + "]";
+		return "Tutorial [id=" + id + ", title=" + title + ", description=" + description + ", author_id=" + author_id
+				+ "]";
 	}
-
 }

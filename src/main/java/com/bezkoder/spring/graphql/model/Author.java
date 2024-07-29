@@ -1,23 +1,21 @@
 package com.bezkoder.spring.graphql.model;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import jakarta.persistence.*;
 
-@Entity
+@Document(collection = "authors")
 public class Author {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
-
-	@Column(name = "name", nullable = false)
+	private String id;
 	private String name;
-
-	@Column(name = "age")
 	private Integer age;
 
 	public Author() {
 	}
 
-	public Author(Long id) {
+	public Author(String id) {
 		this.id = id;
 	}
 
@@ -26,7 +24,7 @@ public class Author {
 		this.age = age;
 	}
 
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
@@ -50,5 +48,4 @@ public class Author {
 	public String toString() {
 		return "User [id=" + id + ", name=" + name + ", age=" + age + "]";
 	}
-
 }
